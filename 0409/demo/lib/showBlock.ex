@@ -3,7 +3,7 @@
 #语句块以列表形式存在
 defmodule Show do
   def show do
-    astActor = quote do
+    _astActor = quote do
       import FishChain.Test.Usecase.Interface.{Account, StockIn}
 
       actor(:c1o, {"company1operator@justkey.net", "774411"})
@@ -20,15 +20,30 @@ defmodule Show do
   end
 end
 
+defmodule ShowActorOnly do
+  def show_actor_only()do
+    quote do
+
+        actor(:c1o, {"company1operator@justkey.net", "774411"})
+        actor(:c2o, {"company2operator@justkey.net", "774411"})
+
+    end
+  end
+end
+
+
+
+IO.inspect(ShowActorOnly.show_actor_only())
+
 # Keyword.get(clause,:do,nil)
-
-
 defmodule My do
   defmacro testMacro(condition,clause)do
     IO.inspect(condition)
     IO.inspect(clause)
   end
 end
+
+
 
 defmodule Run do
   require My

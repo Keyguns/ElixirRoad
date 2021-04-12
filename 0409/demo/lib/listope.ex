@@ -10,3 +10,5 @@ IO.inspect(Keyword.get_values(list,:a))
 IO.puts("hahah")
 
 # Keyword.get_values()
+
+#打开振动
