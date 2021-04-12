@@ -1,3 +1,5 @@
+# get(keywords, key, default \\ nil)
+# get_lazy(keywords, key, fun)
 #语句块以列表形式存在
 defmodule Show do
   def show do
@@ -18,6 +20,7 @@ defmodule Show do
   end
 end
 
+# Keyword.get(clause,:do,nil)
 
 
 defmodule My do
@@ -36,5 +39,3 @@ defmodule Run do
     IO.puts "1!=2"
   end
 end
-
-# 业务测试代码
