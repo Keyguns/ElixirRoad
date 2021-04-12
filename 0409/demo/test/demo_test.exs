@@ -10,6 +10,7 @@ defmodule DemoTest do
   test "get import" do
     {_,_,[{impo,_,module_name}|rest]}=Show.show()
     my_import={impo,[context: Elixir],module_name}
+                        ## import FishChain.Test.Usecase.Interface.{Account, StockIn}
     assert my_import=={:import, [context: Elixir],
                         #FishChain.Test.Usecase.Interface.{Account, StockIn}
                         [
@@ -33,8 +34,13 @@ defmodule DemoTest do
                       }
      IO.puts(Macro.to_string(my_import))
   end
-  test "compare" do
 
-
+  test "get keyword list from list" do
+  end
+  
+  test "pop" do
+    pop()
+    IO.inspect("")
+    #IO.inspect("")
   end
 end
