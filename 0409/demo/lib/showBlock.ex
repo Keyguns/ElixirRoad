@@ -3,7 +3,7 @@
 #语句块以列表形式存在
 defmodule Show do
   def show do
-    astActor = quote do
+    quote do
       import FishChain.Test.Usecase.Interface.{Account, StockIn}
 
       actor(:c1o, {"company1operator@justkey.net", "774411"})
@@ -16,26 +16,30 @@ defmodule Show do
         {:ok, data} = message(actor, :si_create,  [...                            ])
       end
     end
-  # IO.inspect (astActor)
   end
+  def haha() do
+    IO.inspect("HaHa")
+  end
+  IO.inspect("haha")
 end
+IO.inspect(Show.show())
 
 # Keyword.get(clause,:do,nil)
 
 
-defmodule My do
-  defmacro testMacro(condition,clause)do
-    IO.inspect(condition)
-    IO.inspect(clause)
-  end
-end
+# defmodule My do
+#   defmacro testMacro(condition,clause)do
+#     IO.inspect(condition)
+#     IO.inspect(clause)
+#   end
+# end
 
-defmodule Run do
-  require My
-  #语句块形成关键字列表
-  My.testMacro 1==2 do
-    IO.puts "1==2"
-  else
-    IO.puts "1!=2"
-  end
-end
+# defmodule Run do
+#   require My
+#   #语句块形成关键字列表
+#   My.testMacro 1==2 do
+#     IO.puts "1==2"
+#   else
+#     IO.puts "1!=2"
+#   end
+# end
