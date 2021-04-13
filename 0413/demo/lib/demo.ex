@@ -23,15 +23,33 @@ defmodule Func do
     num + 1
   end
   def add(num) do
-    num    
+    num
   end
 
+  def null do
+  end
 end
 
+# test unmatch function
 defmodule Run do
+
   num = Func.add(12)
   IO.inspect(num)
   a = 8
   a = Func.add(a)
   IO.inspect(a)
+
+  IO.inspect(Func.null)
 end
+
+
+
+defmodule ModuleName do
+  def func_name(input) do
+    Enum.map(input,fn input_item -> IO.inspect(input_item) end )
+  end
+end
+
+
+
+# 车到山前必有路
