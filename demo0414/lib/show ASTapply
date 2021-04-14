@@ -1,0 +1,73 @@
+{:def, [context: Run, import: Kernel],
+ [
+   {:approve_stockin, [context: Run], [{:actor, [], Run}]},
+    [
+     do: {:__block__, [],
+      [
+        {:=, [],
+         [
+           {:resp, [], Run},
+           {:apply, [context: Run, import: Kernel],
+            [
+              {{:., [],
+                [
+                  {{:., [],
+                    [
+                      {:__aliases__, [alias: false], [:Test, :A, :B]},
+                      :ac_signin
+                    ]}, [no_parens: true], []},
+                  :biz
+                ]}, [no_parens: true], []},
+              {{:., [],
+                [
+                  {{:., [],
+                    [
+                      {:__aliases__, [alias: false], [:Test, :A, :B]},
+                      :ac_signin
+                    ]}, [no_parens: true], []},
+                  :func
+                ]}, [no_parens: true], []},
+              [
+                {{:., [], [{:actor, [], Run}, :loginname]}, [no_parens: true],
+                 []},
+                {{:., [], [{:actor, [], Run}, :password]}, [no_parens: true],
+                 []}
+              ]
+            ]
+            }
+         ]},
+        {:assert, [],
+         [{:==, [context: Run, import: Kernel], [{:resp, [], Run}, :ok]}]},
+        {:=, [],
+         [
+           {:resp, [], Run},
+           {:apply, [context: Run, import: Kernel],
+            [
+              {{:., [],
+                [
+                  {{:., [],
+                    [
+                      {:__aliases__, [alias: false], [:Test, :A, :B]},
+                      :si_getlist
+                    ]}, [no_parens: true], []},
+                  :biz
+                ]}, [no_parens: true], []},
+              {{:., [],
+                [
+                  {{:., [],
+                    [
+                      {:__aliases__, [alias: false], [:Test, :A, :B]},
+                      :si_getlist
+                    ]}, [no_parens: true], []},
+                  :func
+                ]}, [no_parens: true], []},
+              [10, 0, 0, 0]
+            ]}
+         ]},
+        {:assert, [],
+         [{:==, [context: Run, import: Kernel], [{:resp, [], Run}, {:ok, :ok}]}]}
+      ]
+    }
+   ]
+ ]
+}

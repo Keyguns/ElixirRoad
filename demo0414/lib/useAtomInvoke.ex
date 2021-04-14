@@ -11,12 +11,13 @@ defmodule AtomInvoke do
   def run do
     IO.inspect(quote do be_invoke() end)
     invoke_by_atom(:haha)
+    {:haha,[],[]}
   end
-
   
+
 end
 
 
 AtomInvoke.run()
 
-# 宏 和 模式匹配
+# 宏 和 模式匹
