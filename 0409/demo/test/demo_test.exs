@@ -46,10 +46,21 @@ defmodule DemoTest do
     assert number == 12
   end
 
-  test "variable differ" do
-    
+  test "macro quote import" do
+    assert 1 == 1
   end
+  test "delet_at(list,index)" do
+    list = [[a: 123],12,%{a: 789}]
+    assert List.delete_at(list,0)  == [12,%{a: 789}]
+    assert List.delete_at(list,-1) == [[a: 123], 12]
+  end
+
+  test "return with asign" do
+    assert Variable.add(12) == 112
+  end
+
 end
+
 
 
 defmodule Variable do
@@ -57,3 +68,6 @@ defmodule Variable do
     num = num + 100
   end
 end
+
+
+# 

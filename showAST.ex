@@ -15,7 +15,6 @@
           #meta data
           [],
           #args
-          #with 参数
           [
             {:__aliases__, [alias: false], [:Account]},
             {:__aliases__, [alias: false], [:StockIn]}
@@ -25,8 +24,6 @@
     },
 
 
-
-    
    {:actor, [], [:c1o, {"company1operator@justkey.net", "774411"}]},
    {:actor, [], [:c2o, {"company2operator@justkey.net", "774411"}]},
 
@@ -70,10 +67,6 @@
             ]}
          ]}
       ]
-    ]
-    }
-
-
-
+    ]}
  ]
 }

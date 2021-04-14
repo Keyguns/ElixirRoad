@@ -15,4 +15,8 @@ defmodule Demo do
   def hello do
     :world
   end
+  def add do
+    IO.inspect hello()
+    IO.inspect hello()
+  end
 end
