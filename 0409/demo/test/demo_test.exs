@@ -8,7 +8,7 @@ defmodule DemoTest do
   end
 
   test "get import" do
-    {_,_,[{impo,_,module_name}|rest]}=Show.show()
+    {_,_,[{impo,_,module_name}|_rest]}=Show.show()
     my_import={impo,[context: Elixir],module_name}
                         ## import FishChain.Test.Usecase.Interface.{Account, StockIn}
     assert my_import=={:import, [context: Elixir],
@@ -37,10 +37,37 @@ defmodule DemoTest do
 
   test "get keyword list from list" do
   end
-  
-  test "pop" do
-    pop()
-    IO.inspect("")
-    #IO.inspect("")
+
+
+# 变量不变意味着行参 实参问题
+  test "variable value" do
+    number = 12
+    Variable.add(number)
+    assert number == 12
+  end
+
+  test "macro quote import" do
+    assert 1 == 1
+  end
+  test "delet_at(list,index)" do
+    list = [[a: 123],12,%{a: 789}]
+    assert List.delete_at(list,0)  == [12,%{a: 789}]
+    assert List.delete_at(list,-1) == [[a: 123], 12]
+  end
+
+  test "return with asign" do
+    assert Variable.add(12) == 112
+  end
+
+end
+
+
+
+defmodule Variable do
+  def add(num)do
+    num = num + 100
   end
 end
+
+
+# 

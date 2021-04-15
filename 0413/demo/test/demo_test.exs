@@ -23,4 +23,14 @@ defmodule DemoTest do
     # 参数以参数列表形式存放
     apply(ModuleName,:func_name,[[1,2,3,4,5]])
   end
+
+  test "list-keyword" do
+    list = [{:a,:b,:sduhfiahfuhai},[:cde,:a,:d],{[:c]},:d]
+    assert List.Keyfind(list,:a,0) == {:a,:b,:sduhfiahfuhai}
+    assert List.Keyfind(list,:c,0) == nil
+    assert List.Keyfind(list,:cde,0) == [:cde,:a,:d]
+  end
+
+
+
 end

@@ -24,15 +24,37 @@ defmodule Show do
 end
 IO.inspect(Show.show())
 
-# Keyword.get(clause,:do,nil)
+defmodule ShowActorOnly do
+  def show_actor_only()do
+    quote do
+
+        actor(:c1o, {"company1operator@justkey.net", "774411"})
+        actor(:c2o, {"company2operator@justkey.net", "774411"})
+
+    end
+  end
+end
 
 
+
+IO.inspect(ShowActorOnly.show_actor_only())
+
+<<<<<<< HEAD
 # defmodule My do
 #   defmacro testMacro(condition,clause)do
 #     IO.inspect(condition)
 #     IO.inspect(clause)
 #   end
 # end
+=======
+# Keyword.get(clause,:do,nil)
+defmodule A.My do
+  defmacro testMacro(condition,clause)do
+    IO.inspect(condition)
+    IO.inspect(clause)
+  end
+end
+>>>>>>> be66da46a43140dd79f1eee4e7da88b0e413b35e
 
 # defmodule Run do
 #   require My
@@ -43,3 +65,22 @@ IO.inspect(Show.show())
 #     IO.puts "1!=2"
 #   end
 # end
+<<<<<<< HEAD
+=======
+
+
+defmodule TestMacro  do
+  defmacro test_macro(module_name,do: clause) do
+    IO.inspect(clause)
+  end
+end
+
+
+defmodule Run do
+  require TestMacro
+  TestMacro.test_macro A.B.C do
+    import A.My
+    IO.inspect("name")
+  end
+end
+>>>>>>> be66da46a43140dd79f1eee4e7da88b0e413b35e

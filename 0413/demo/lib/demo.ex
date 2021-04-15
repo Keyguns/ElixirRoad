@@ -50,6 +50,14 @@ defmodule ModuleName do
   end
 end
 
+defmodule AwithB do
+  def a do
+    :ok
+  end
+  def b do
+    IO.inspect(a())
+  end
+end
 
+AwithB.b()
 
-# 车到山前必有路
