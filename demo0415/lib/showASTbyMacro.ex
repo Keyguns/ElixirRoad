@@ -1,6 +1,4 @@
 # showASTbyMacro
-
-
 defmodule Demo0415 do
 
   def hello do
@@ -23,8 +21,6 @@ defmodule Demo0415 do
     end
   end
 end
-
-
 
 #module name 名称处理
 
@@ -54,8 +50,6 @@ defmodule Run do
     IO.inspect("one sentence")
   end
 end
-
-
 
 defmodule A do
   def out do

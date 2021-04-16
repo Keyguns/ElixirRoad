@@ -1,0 +1,37 @@
+{:defcase, [line: 10],
+   [
+     {:__aliases__, [line: 10], [:FishChain, :Test, :Usecase, :StockInTest]},
+     [
+       do: {:__block__, [],
+        [
+          {:import, [line: 11],
+           [{:__aliases__, [line: 11], [:FishChain, :Actor, :CompanyOperator]}]},
+          {:import, [line: 12],
+           [{:__aliases__, [line: 12], [:FishChain, :Actor, :CompanyReviewer]}]},
+          {:bizflow, [line: 14], ["with no thing", [do: {:__block__, [], []}]]},
+          {:bizflow, [line: 18],
+           [
+             "stockin - ok",             
+             [do: {:message, [line: 19],[:c1o, {:apply_stockin, [line: 19], nil}]}]
+           ]},
+          {:bizflow, [line: 23],
+           [
+             "stockin - reject",
+             [
+               do: {:__block__, [],
+                [
+                  {:message, [line: 24],
+                   [:c2o, {:apply_stockin, [line: 24], nil}]},
+                  {:message, [line: 25],
+                   [:c1r, {:reject_stockin, [line: 25], nil}]}
+                ]}
+             ]
+           ]}
+        ]}
+     ]
+   ]}
+
+[do: AST]  # 实际是关键子列表
+
+defcase 一共两个参数  {:__aliases__, [line: 10], [:FishChain, :Test, :Usecase, :StockInTest]},
+                    do ... end ==> [do: AST]
