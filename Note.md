@@ -27,3 +27,8 @@ FunctionClauseError
    end
  end
 ```
+#### 0419
+- ** (CompileError) test/dsl/usecase_test.exs: invalid arguments for "try"
+  AST合成出现问题报错
+- 代码报错就按照逻辑走判断是否出现问题
+- module 和 function 变脸 名称都是原子类型
