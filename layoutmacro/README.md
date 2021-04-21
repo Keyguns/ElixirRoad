@@ -21,11 +21,6 @@ be found at [https://hexdocs.pm/layoutmacro](https://hexdocs.pm/layoutmacro).
 
 ```elixir
 
-deflayout ExpandByFunction do
-  message("Happy","Haha")
-  message("Angry"，"tired")
-end
-
 # 需要根据具体情况选择解决方案，方案很难具备普适性，所以不要用普适性的思维思考问题
 # 没有银弹
 
@@ -38,18 +33,23 @@ end
 # interface
 # interface(:be_invoked_func,func_name)  
 
-
-def message("emotion","status") do
-  {}
+deflayout ExpandByFunction do
+  message("Happy","Haha")
+  message("Angry"，"tired")
 end
 
 
-==>
+def message("emotion","status") do
+
+end
+
+#==>
 
 defmodule ExpandByFunction do
+  defmacro deflayout(module_name,do: clause) do
+        
+  end
 
-  
-  
 end
   
 ```
