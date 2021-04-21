@@ -12,7 +12,7 @@ defmodule Layoutmacro do
 
     funcs = Enum.map(messages,fn message -> quote do assert func_message(unquote(message)) end end)
     [fun1,fun2,fun3] = funcs
-    quote do 
+    quote do
       ExUnit.start()
       defmodule unquote(module_name) do
         use ExUnit.Case, async: true
@@ -21,7 +21,7 @@ defmodule Layoutmacro do
         unquote (fun3)
         #unquote(funcs)
       end
-    end  
+    end
 
   end
 
@@ -35,10 +35,10 @@ end
 
 defmodule Run do
   import Layoutmacro
-   
+
 # 查看扩展函数结果
-  # expr = 
-  # quote do 
+  # expr =
+  # quote do
   #   layout Haha do
   #     message("Happy ","hungry")
   #     message("Mad ","thirsty")
@@ -54,7 +54,7 @@ defmodule Run do
     message("Bored ","fully")
   end
 end
- 
+
 
 
 # 函数调用宏
