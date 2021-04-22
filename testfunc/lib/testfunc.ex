@@ -1,3 +1,5 @@
+# sentence in compose by list in function body
+
 defmodule Testfunc do
   
   def multi_return() do

@@ -46,7 +46,20 @@ rely on this uniform breakdown when pattern matching
 arguments in macros
 
 -  how to transform the AST using Elixir’s macro system.
-    - 
+- more complex types are returned as a quoted expression to avoid confusion 
+- quote && unquote
+- show ast process
+  - **Macro.expand_once** --- single times
+  - **Macro.expand_fully** --- until meet the special macro 
+  - **Code.eval_quoted** evaluate an AST
+- hygiene 
+  - ***var！***
+  > allow our macro to produce an AST that has access to the caller’s bindings when expanded
+
+> [do: "it's true", else: "it remains to be seen"]
+> 关键字列表可以通过库函数进行获取
+
+
 
 ```elixir
 quote do 
@@ -79,6 +92,7 @@ their context?
     - Import gives us everything we had in our previous solution which by __using__
 - Avoid Injection Large Amount of Code
     - 
+- 
 
 
 
@@ -86,7 +100,7 @@ their context?
 
 
 ### Keywords
-
+- belt 腰带
 - optimization 优化
 - hazards 危害
 - temptation 诱人
@@ -104,3 +118,15 @@ their context?
 - literals 文字
 - lay 铺设，放置，躺下
 - ties 联系
+- fumblle 摸索
+- encounter 遇到
+- invocation 调用
+- explicit 显性
+- violating 违反
+- clobbered 破坏
+- basis 基础
+- eliminate 清除
+- boilerplate 样板
+- spawns 产生
+- repeatedly 反复
+- wrapped 包裹

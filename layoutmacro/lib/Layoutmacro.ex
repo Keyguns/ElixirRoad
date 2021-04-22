@@ -3,6 +3,7 @@
 defmodule Rebuildmacro do
     defmacro layout(module_name,do: clause) do
       {:__block__,[],message_list} = clause
+      # 通过AST获取信息 还是太darty了
       # 得到message的信息，
       messages = Enum.map(message_list,fn message -> get_argue(message)end)
       funcs    = Enum.map(messages,    fn message -> compose_arguement(message) end)
@@ -40,7 +41,6 @@ defmodule Rebuildmacro do
   
   defmodule Run do
     import Layoutmacro
-  
     layout Haha do
       message("Happy ","hungry")
       message("Mad ","thirsty")
