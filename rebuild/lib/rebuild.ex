@@ -1,5 +1,5 @@
 defmodule Rebuild do
-  # defactor
+### defactor
   defmacro defactor(module_name, do: clause) do
     quote do
       defmodule unquote(module_name) do
@@ -19,12 +19,15 @@ defmodule Rebuild do
 
   defmacro defusecase({func_name, _, [actor]}, do: clause) do
     quote do
-      def unquote(func_name)(actor) do
+      def unquote(func_name)(unquote(actor)) do
         unquote(clause)
         # clause 处理AST 吧
       end
     end
   end
+
+
+### definterface()
 
   defmacro definterface(test_module_name,_module_name,do: clause)do
     quote do
@@ -36,8 +39,14 @@ defmodule Rebuild do
 
   defmacro definterface(invoked_func,func) do
     quote do
-      def unquote(invoke_func)(),do: %{biz: gen_biz(__MODULE__),func: func}
+      def unquote(invoked_func)(),do: %{biz: gen_biz(__MODULE__),func: unquote(func)}
     end
   end
+
+  def gen_biz(module_name) do
+    # IO.inspect(module_name)
+  end
+
+  
 
 end
