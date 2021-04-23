@@ -14,7 +14,7 @@ defmodule Yzd.Dsl.Usecase do
         unquote(biz_case)
       end
 
-    end  
+    end
   end
 
 end
@@ -22,9 +22,12 @@ end
 
 defmodule Yzd.Dsl.Usecase.Parser do
   def parse_bizflow(bize_clause)do
-    
-  end 
+
+  end
 end
+
+
+# 
 
 
 # defcase Usecase.Test.Case do
@@ -40,5 +43,3 @@ end
 #     message(:ad3o, reject_stockin)
 #   end
 # end
-
-

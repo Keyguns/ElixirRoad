@@ -3,10 +3,10 @@ defmodule Defin do
   number = 10
   def number(number) do
     IO.inspect(number)
-  end 
+  end
 
-end 
+end
 
-defmodule Run do
+defmodule RunNumber do
     Defin.number(10)
-end 
+end

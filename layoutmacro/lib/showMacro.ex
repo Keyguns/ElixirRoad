@@ -5,5 +5,3 @@ defmodule ShowMacro do
     :a
   end
 end
-
-# 
