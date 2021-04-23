@@ -14,49 +14,55 @@ defmodule Test.Interface.Account do
   @moduledoc "use for test"
 end
 
+# 嵌套定义会导致__MODULE__ 增加前缀
+
+
+
 defmodule RebuildTest do
   use ExUnit.Case
-  # expr = 
-  # quote do
 
-    defactor Usecase.Test.Actor.CompanyOperator do
-      import Test.Interface.{StockIn,Account}
-      actor(:ac1o, {"company1operator@justkey.net", "774411"})
-      actor(:rc2o, {"company2operator@justkey.net", "774422"})
-      actor(:ad3o, {"company3operator@justkey.net", "774433"})
-    
-      defusecase apply_stockin(actor) do
-        # :ok = message(:ac_signin, [actor.login_name, actor.password])
-        # {:ok, [1, 2, 3]} = message(:ac_getdone, [0, 10, 0, 11])
-        # {:ok, 200} = message(:ac_create, [:create])
-      end
-    
-      defusecase approve_stockin(actor) do
-      #   :ok = message(:rc_signin, [actor.login_name, actor.password])
-      #   {:ok, [1, 2, 3, 4]} = message(:rc_get_to_do, [1, 2, "12:12"])
-      end
-    
-      defusecase reject_stockin(actor) do
-      #   :ok = message(:ad_signin, [actor.login_name, actor.password])
-      #   :ok = message(:ad_reject, [400])
-      end
-    end
-
-  # end
-
-  # Macro.expand_once(expr,__ENV__)
-  # |> Macro.expand_once(__ENV__)
-  # |> Macro.to_string()
-  # |> IO.puts()
+  defactor Usecase.Test.Actor.CompanyOperator do
+    import Test.Interface.{StockIn,Account}
+    actor(:ac1o, {"company1operator@justkey.net", "774411"})
+    actor(:rc2o, {"company2operator@justkey.net", "774422"})
+    actor(:ad3o, {"company3operator@justkey.net", "774433"})
   
-  test "defacot - actor" do
+    defusecase apply_stockin(actor) do
+      # :ok = message(:ac_signin, [actor.login_name, actor.password])
+      # {:ok, [1, 2, 3]} = message(:ac_getdone, [0, 10, 0, 11])
+      # {:ok, 200} = message(:ac_create, [:create])
+    end
+  
+    defusecase approve_stockin(actor) do
+    #   :ok = message(:rc_signin, [actor.login_name, actor.password])
+    #   {:ok, [1, 2, 3, 4]} = message(:rc_get_to_do, [1, 2, "12:12"])
+    end
+  
+    defusecase reject_stockin(actor) do
+    #   :ok = message(:ad_signin, [actor.login_name, actor.password])
+    #   :ok = message(:ad_reject, [400])
+    end
+  end
+  
+  resp = apply()
+
+
+  test "defactor - actor" do
     assert Usecase.Test.Actor.CompanyOperator.ac1o == %{login_name: "company1operator@justkey.net",password:  "774411"}
   end
 
-  test "defacot - defusecase - run" do 
+  test "defactor - defusecase - run" do 
     Usecase.Test.Actor.CompanyOperator.apply_stockin(:LaDeng)
     Usecase.Test.Actor.CompanyOperator.approve_stockin(:LaDeng)
   end
-  
+
+  definterface Test.A.B.C do
+    interface(:ac_getlist,getlist)
+  end
+
+  test "definterface" do
+    assert Test.A.B.C.ac_getlist().biz == A.B.C
+  end
+
 end
 

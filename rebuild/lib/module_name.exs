@@ -14,18 +14,24 @@ defmodule ModuleName do
 
   defmacro interface(invoked_func,{func_name,_,_}) do
     quote do
-      unquote(invoked_func)(),do: %{biz: gen_module(__MODULE__) ,func: func_name}
+      unquote(invoked_func)()do
+         %{biz: gen_biz(__MODULE__) ,func: func_name}
+      end
     end
   end
 
-  def gen_module(test_moduel_name) do
-    
+
+  def gen_biz(test_module_name) do
+    test_module_name = to_string(test_module_name)
+    test_module_name = String.split(test_module_name,".")
+    test_module_name -- ["Test"]
   end
-
-
 end
+# 
 
-
+# Module_name ==> AST {:__aliases__, [line: 17], [:A, :B, :C]}
+# __MODULE__  ==> atom        A.B.C
+#             ==> to_string  "ELixir.A.B.C"
 
 
 
