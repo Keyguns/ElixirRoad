@@ -50,7 +50,7 @@ arguments in macros
 - quote && unquote
 - show ast process
   - **Macro.expand_once** --- single times
-  - **Macro.expand_fully** --- until meet the special macro 
+  - **Macro.expand_fully** --- until meet the special macro need use expand_one to realise the func
   - **Code.eval_quoted** evaluate an AST
 - hygiene 
   - ***var！***

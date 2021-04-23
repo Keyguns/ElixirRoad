@@ -6,7 +6,7 @@ defmodule ListRelase do
   defmacro relase_list do
     
   end 
-
+  
 end 
 
 

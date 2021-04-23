@@ -1,5 +1,5 @@
 ### 参数列表中的元素和宏的参数进行pattern match
-### 属实简单，一天半的时间没有解决
+
 defmodule Coat do
   defmacro coat(module_name,do: clause) do
     IO.inspect("A")
@@ -29,6 +29,7 @@ defmodule Coat do
   end
 end
 
+# 函数还是面向的是结果，macro面向的是生成的代码
 
 defmodule FuncLib do
   def func_1(actor),do: IO.inspect(actor,label: "func_1")
