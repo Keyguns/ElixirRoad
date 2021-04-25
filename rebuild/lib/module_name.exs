@@ -3,6 +3,7 @@
 # 更像是一个框架 Junit
 
 # testmodule 和 biz 之间建立关系
+
 defmodule ModuleName do
   defmacro definterface(test_module_name,do: clause)do
     quote do
@@ -57,7 +58,7 @@ end
 #   module_name = __MODULE__
 #   module_name = gen_module(module_name)
 #   IO.inspect(module_name)
-# end
+# esbx
 
 # defmodule Generater do
 #   def gen_module(module_name) do
@@ -67,4 +68,4 @@ end
 
 
 
-### Don't want to coding
+
