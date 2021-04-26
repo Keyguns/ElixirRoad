@@ -7,7 +7,8 @@ defmodule RunTest do
     assert Demo.hello() == :world
   end
 
-  test "Hello - Test" do
-    assert Run.hello() == :HelloTest
+  test "assert" do
+    assert {:Hello,:world}|>elem(1) == :world
   end
+  
 end
